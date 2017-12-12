@@ -1,23 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
- 
+
 const Menubar = () =>{
   return (
     <div className="barra"> <ul className="nav nav-tabs">
       <li className="dropdown">
-        <Link 
+        <Link
           to="/">
           Home
         </Link>
     </li>
       <li className="dropdown">
-        <Link 
+        <Link
           to="/Portofolios">
-          Portofolios
+          Mini App
         </Link>
     </li>
       <li className="dropdown">
-        <Link 
+        <Link
           to="/Interests">
           Interests
         </Link>

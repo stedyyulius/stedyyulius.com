@@ -20,7 +20,7 @@ class Achievements extends Component {
           <div className="head">
             <h1>Gaming</h1>
             <hr />
-          </div>  
+          </div>
           <br />
           <div className="row">
             <div className="col-md-4">
@@ -108,7 +108,7 @@ class Achievements extends Component {
                 Making movies is also one of my hobbies, "Apa Salahku?" or "What did i do wrong?" is a psychological short movie about a conversation between a boy with an oldman which discussing about the boy's naughty little brother, yet the oldman knows something about him
               </div>
             </div>
-          </div>  
+          </div>
           </div>
           <br />
         <div className ='row'>
@@ -116,8 +116,31 @@ class Achievements extends Component {
             <h1> Coding </h1>
             <hr />
             <br />
-            <div className="col-md-offset-2 col-md-8">
-              <div data-aos="fade-right"><h3>Just started coding in 2017 and i promised to myself i will get at least 1 throphy for this stuff</h3></div>
+            <div className ='row'>
+              <div className="col-md-offset-2 col-md-8">
+                <div data-aos="fade-up"><img className="pic" src="https://scontent-sin6-2.xx.fbcdn.net/v/t31.0-8/21765762_1584299078307643_4070240637421098328_o.jpg?oh=f5dd91bc58127dee9bc9f7aa79a72af7&oe=5AC50938" alt="win"/></div>
+              </div>
+              <div className="col-md-offset-2 col-md-8">
+                <div className="description" data-aos="fade-left">
+                  <h2>2nd Place FWD Hackhaton</h2>
+                </div>
+                <div className="description" data-aos="fade-left">
+                  My first time signing up for hackhaton, it turns out it is really tiring yet really really fun. Here i made educational app for kids for them to be a stronger person just as they train their character in game. The app was made using vue js.
+                </div>
+              </div>
+            </div>
+            <div className ='row'>
+              <div className="col-md-offset-2 col-md-8">
+                <div data-aos="fade-up"><img className="pic" src="https://static.cdn-cdpl.com/source/c420ea5d6888e29a87437c2d005edd57/DSC02504.jpg" alt="win"/></div>
+              </div>
+              <div className="col-md-offset-2 col-md-8">
+                <div className="description" data-aos="fade-right">
+                  <h2>2nd Place Facebook Hackhaton</h2>
+                </div>
+                <div className="description" data-aos="fade-right">
+                  In this hackhaton i made event locator app using react, github api, facebook apis, graphql, ect.
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import { addProduct } from '/home/stedy/Desktop/stedyyulius.com/stedy/src/actions/index.js'
+import { addProduct } from '../../actions'
 
 export class Ecommerce extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export class Ecommerce extends Component {
   }
   render() {
     return (
-    <div>  
+    <div>
       <div className="container">
         <div className="notification login-alert">
             Please Enter Your Username And Password!
@@ -30,7 +30,7 @@ export class Ecommerce extends Component {
                 <span className="icon-bar"></span>
               </button>
               <a className="navbar-brand" href="#">Stedy's Shop</a>
-            </div>  
+            </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
                 <li>
@@ -46,7 +46,7 @@ export class Ecommerce extends Component {
               			<button type="button" className="close" data-dismiss="modal"><span aria-hidden="true">×</span><span className="sr-only">Close</span></button>
               			<h3 className="modal-title" id="lineModalLabel">Add Product</h3>
               		</div>
-              		<div className="modal-body">            			
+              		<div className="modal-body">
               			      <form>
                             <div className="form-group">
                               <label>Product Name</label>
@@ -65,7 +65,7 @@ export class Ecommerce extends Component {
                               name: this.refs.name.value || "no name",
                               price: this.refs.price.value || 0,
                               img: this.refs.image.value || "https://www.jainsusa.com/images/store/landscape/not-available.jpg",
-                              quantity: 0    
+                              quantity: 0
                             })}>Submit</button>
                           </form>
               		</div>
@@ -88,7 +88,7 @@ export class Ecommerce extends Component {
                   </a>
                   <ul className="dropdown-menu dropdown-cart" role="menu">
                     {this.state.cart.map((item,index)=>{
-                      return(  
+                      return(
                     <li>
                       <span className="item">
                         <span className="item-left">
@@ -108,7 +108,7 @@ export class Ecommerce extends Component {
                     <br />
                     <li className="divider"></li>
                     <br />
-                    <br /> 
+                    <br />
                     <li>
                       <div className="totalCart text-center"><b>Total Price: Rp{this.state.totalCartPrice}</b></div>
                     </li>
@@ -159,9 +159,9 @@ export class Ecommerce extends Component {
                         <td className="col-sm-1 col-md-1">
                           <button className="btn btn-default btn-xs" onClick={()=>this.addQuantity(index)}><span className="glyphicon glyphicon-plus"></span></button>
                           <button className="btn btn-default btn-xs" onClick={()=>this.minusQuantity(index)}><span className="glyphicon glyphicon-minus"></span></button>
-                        </td>              
+                        </td>
                     </tr>
-                  )})}  
+                  )})}
                     <tr>
                         <td></td>
                         <td></td>
@@ -178,7 +178,7 @@ export class Ecommerce extends Component {
         </div>
     </div>
   </div>
-</div>  
+</div>
     )
   }
 
@@ -190,13 +190,13 @@ export class Ecommerce extends Component {
   //     quantity: state.quantity,
   //     price: formatedPrice,
   //     img: state.img
-  //   } 
+  //   }
   //   console.log(state);
   //   this.setState({
   //     state: state
   //   })
   // }
-  // 
+  //
   // componentWillMount(){
   //   this.setState({
   //     displayedPrice: this.state.products
@@ -207,7 +207,7 @@ export class Ecommerce extends Component {
   //   }
   //   console.log(JSON.stringify(this.state.displayedPrice));
   // }
-  
+
   addQuantity(index){
   var oldQuantity = this.state.products[index].quantity
   var newQuantity = oldQuantity + 1
@@ -216,7 +216,7 @@ export class Ecommerce extends Component {
     quantity: newQuantity,
     price: this.state.products[index].price,
     img: this.state.products[index].img
-  } 
+  }
   this.state.products[index] = updatedProduct
   var tp = 0
   for(var i = 0; i < this.state.products.length; i++){
@@ -227,7 +227,7 @@ export class Ecommerce extends Component {
       totalPrice: tp
     })
   }
-  
+
   minusQuantity(index){
     if(this.state.products[index].quantity !== 0){
       var oldQuantity = this.state.products[index].quantity
@@ -237,7 +237,7 @@ export class Ecommerce extends Component {
         quantity: newQuantity,
         price: this.state.products[index].price,
         img: this.state.products[index].img
-      } 
+      }
       this.state.products[index] = updatedProduct
       var tp = 0
       for(var i = 0; i < this.state.products.length; i++){
@@ -249,7 +249,7 @@ export class Ecommerce extends Component {
         })
     }
   }
-  
+
   removeProduct(index){
     var currentPrice = this.state.products[index].quantity * this.state.products[index].price
     this.state.products.splice(index,1)
@@ -259,21 +259,21 @@ export class Ecommerce extends Component {
       totalPrice: minus
     })
   }
-  
+
   checkout(){
     var items = []
     var totalPrice = 0
     for(var i = 0;i < this.state.products.length; i++){
       if(this.state.products[i].quantity > 0){
         items.push(this.state.products[i])
-        totalPrice += this.state.products[i].quantity * this.state.products[i].price 
+        totalPrice += this.state.products[i].quantity * this.state.products[i].price
       }
     }
     for(var j = 0; j < items.length;j++){
       if(items[j].quantity === 1){
         alert(`${items[j].quantity} ${items[j].name} Added to cart!`)
       }
-      
+
       if(items[j].quantity > 1){
         alert(`${items[j].quantity} ${items[j].name}s Added to cart!`)
       }
@@ -286,7 +286,7 @@ export class Ecommerce extends Component {
       console.log(`masuk jing`);
     })
   }
-  
+
   removeCart(index){
     var currentPrice = this.state.cart[index].quantity * this.state.cart[index].price
     this.state.cart.splice(index,1)
@@ -296,7 +296,7 @@ export class Ecommerce extends Component {
       totalCartPrice: minus
     })
   }
-  
+
   addNewProduct(newProduct){
     this.state.products.push(newProduct)
     this.setState({
@@ -309,7 +309,7 @@ export class Ecommerce extends Component {
 const mapStateToProps = (state) =>{
   return {
     products: state.products
-  }  
+  }
 }
 
 const mapDispatchToProps = (dispatch) =>{
